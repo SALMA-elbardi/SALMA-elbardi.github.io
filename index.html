@@ -14,6 +14,23 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
+
+    <!-- Theme Initialization Script (Prevents FOUC) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+            } else if (savedTheme === 'dark') {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Background Ambient Glow & Grid -->
@@ -27,7 +44,7 @@
         <div class="container header-container">
             <a href="#accueil" class="brand-logo" aria-label="Accueil Salma El Bardi">
                 <span class="logo-symbol">&lt;/&gt;</span>
-                <span class="logo-text">Salma<span class="gradient-text">.DataAI</span></span>
+                <span class="logo-text">Salma El Bardi</span>
             </a>
 
             <!-- Desktop Navigation -->
@@ -38,16 +55,29 @@
                     <li><a href="#competences" class="nav-link">Compétences</a></li>
                     <li><a href="#projets" class="nav-link">Projets</a></li>
                     <li><a href="#parcours" class="nav-link">Parcours</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
-            <!-- Availability Badge & Mobile Toggle -->
+            <!-- Theme Toggle & Header Actions -->
             <div class="header-actions">
-                <div class="status-badge" title="Statut actuel">
-                    <span class="pulsing-dot"></span>
-                    <span class="badge-label">PFE Début 2027</span>
-                </div>
+                <button id="theme-toggle-btn" class="theme-toggle" aria-label="Basculer entre le mode sombre et le mode clair" title="Basculer le thème">
+                    <!-- Sun Icon (affiché en mode sombre) -->
+                    <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon (affiché en mode clair) -->
+                    <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
                 
                 <a href="#contact" class="btn btn-sm btn-outline header-cta">Me contacter</a>
 
@@ -92,7 +122,7 @@
                 <div class="hero-content">
                     <div class="opportunity-chip">
                         <span class="chip-glow"></span>
-                        <span class="chip-icon">🎯</span>
+                        <span class="chip-bullet" aria-hidden="true">&#9679;</span>
                         <span class="chip-text">À LA RECHERCHE D'UN STAGE PFE DE 6 MOIS (Début 2027)</span>
                     </div>
 

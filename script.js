@@ -5,6 +5,43 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // --------------------------------------------------------------------------
+    // 0. Theme Switcher (Dark / Light Mode)
+    // --------------------------------------------------------------------------
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const rootHtml = document.documentElement;
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            rootHtml.classList.remove('dark');
+            rootHtml.classList.add('light');
+            localStorage.setItem('theme', 'light');
+            if (themeToggleBtn) {
+                themeToggleBtn.setAttribute('title', 'Passer en mode sombre');
+                themeToggleBtn.setAttribute('aria-label', 'Passer en mode sombre');
+            }
+        } else {
+            rootHtml.classList.remove('light');
+            rootHtml.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            if (themeToggleBtn) {
+                themeToggleBtn.setAttribute('title', 'Passer en mode clair');
+                themeToggleBtn.setAttribute('aria-label', 'Passer en mode clair');
+            }
+        }
+    }
+
+    // Initialize button state based on current active class
+    const initialTheme = rootHtml.classList.contains('light') ? 'light' : 'dark';
+    applyTheme(initialTheme);
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const isCurrentlyLight = rootHtml.classList.contains('light');
+            applyTheme(isCurrentlyLight ? 'dark' : 'light');
+        });
+    }
+
+    // --------------------------------------------------------------------------
     // 1. Mobile Drawer Navigation
     // --------------------------------------------------------------------------
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');

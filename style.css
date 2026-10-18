@@ -6,8 +6,8 @@
 /* --------------------------------------------------------------------------
    1. CSS Variables & Design Tokens
    -------------------------------------------------------------------------- */
-:root {
-    /* Color Palette */
+:root, html.dark {
+    /* Color Palette - Dark Mode */
     --bg-main: #06090f;
     --bg-secondary: #0b1120;
     --bg-card: rgba(15, 23, 42, 0.7);
@@ -61,6 +61,52 @@
     --radius-md: 14px;
     --radius-lg: 20px;
     --radius-full: 9999px;
+
+    /* Special Elements */
+    --chip-bullet-color: #00f0ff;
+}
+
+html.light {
+    /* Color Palette - Light Mode */
+    --bg-main: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-card: rgba(255, 255, 255, 0.88);
+    --bg-card-hover: rgba(255, 255, 255, 0.98);
+    --bg-glass: rgba(255, 255, 255, 0.82);
+    --bg-terminal: #0b1329;
+
+    /* Text Colors */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-light: #0f172a;
+
+    /* Accents & Gradients */
+    --cyan-glow: #0284c7;
+    --cyan-subtle: rgba(2, 132, 199, 0.12);
+    --purple-glow: #7c3aed;
+    --purple-subtle: rgba(124, 58, 237, 0.12);
+    --emerald-glow: #059669;
+    --emerald-subtle: rgba(5, 150, 105, 0.12);
+    --amber-glow: #d97706;
+    --amber-subtle: rgba(217, 119, 6, 0.12);
+
+    --gradient-primary: linear-gradient(135deg, #0284c7 0%, #7c3aed 50%, #db2777 100%);
+    --gradient-cyan-purple: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
+    --gradient-card-border: linear-gradient(135deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02));
+
+    /* Borders */
+    --border-color: rgba(148, 163, 184, 0.28);
+    --border-hover: rgba(2, 132, 199, 0.5);
+
+    /* Shadows & Glows */
+    --glow-cyan-sm: 0 0 15px rgba(2, 132, 199, 0.15);
+    --glow-purple-sm: 0 0 15px rgba(124, 58, 237, 0.15);
+    --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 20px 35px -10px rgba(2, 132, 199, 0.18);
+
+    /* Special Elements */
+    --chip-bullet-color: #000000;
 }
 
 /* --------------------------------------------------------------------------
@@ -357,39 +403,58 @@ body {
     font-weight: 600;
 }
 
-/* Header Actions & Status Badge */
+/* Header Actions & Theme Toggle */
 .header-actions {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.status-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    padding: 6px 12px;
-    border-radius: var(--radius-full);
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #34d399;
-}
-
-.pulsing-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #10b981;
+.theme-toggle {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    box-shadow: 0 0 10px #10b981;
-    animation: pulse-dot 1.8s infinite;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all var(--transition-fast);
 }
 
-@keyframes pulse-dot {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--cyan-glow);
+    color: var(--cyan-glow);
+    transform: scale(1.08);
+}
+
+.theme-icon {
+    transition: transform var(--transition-fast);
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(20deg);
+}
+
+/* Visibility based on theme */
+html.dark .sun-icon {
+    display: block;
+    color: #facc15;
+}
+html.dark .moon-icon {
+    display: none;
+}
+
+html.light .sun-icon {
+    display: none;
+}
+html.light .moon-icon {
+    display: block;
+    color: #475569;
 }
 
 /* Mobile Hamburger Toggle */
@@ -533,6 +598,16 @@ body {
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
     position: relative;
     overflow: hidden;
+}
+
+.chip-bullet {
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--chip-bullet-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .opportunity-chip .chip-text {
@@ -1803,4 +1878,254 @@ body {
         align-items: flex-start;
         gap: 6px;
     }
+}
+
+/* --------------------------------------------------------------------------
+   13. Light Mode Detailed Overrides
+   -------------------------------------------------------------------------- */
+html.light body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+}
+
+html.light .ambient-glow {
+    opacity: 0.16;
+}
+
+html.light .grid-overlay {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+}
+
+html.light .site-header {
+    background: rgba(248, 250, 252, 0.88);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+html.light .brand-logo {
+    color: #0f172a;
+}
+
+html.light .nav-link {
+    color: #475569;
+}
+
+html.light .nav-link:hover,
+html.light .nav-link.active {
+    color: var(--cyan-glow);
+    background: rgba(2, 132, 199, 0.08);
+}
+
+html.light .theme-toggle {
+    background: #ffffff;
+    border-color: rgba(203, 213, 225, 0.9);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+html.light .theme-toggle:hover {
+    background: #f1f5f9;
+    border-color: var(--cyan-glow);
+    color: var(--cyan-glow);
+}
+
+html.light .opportunity-chip {
+    background: rgba(2, 132, 199, 0.08);
+    border-color: rgba(2, 132, 199, 0.35);
+    box-shadow: 0 2px 12px rgba(2, 132, 199, 0.1);
+}
+
+html.light .opportunity-chip .chip-text {
+    color: #0369a1;
+}
+
+html.light .chip-bullet {
+    color: #000000;
+}
+
+html.light .hero-title {
+    color: #0f172a;
+}
+
+html.light .glow-text {
+    text-shadow: 0 0 25px rgba(2, 132, 199, 0.2);
+}
+
+html.light .btn-secondary {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: rgba(203, 213, 225, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+html.light .btn-secondary:hover {
+    background: #f8fafc;
+    border-color: var(--cyan-glow);
+}
+
+html.light .btn-outline {
+    color: var(--cyan-glow);
+    border-color: var(--cyan-glow);
+}
+
+html.light .btn-outline:hover {
+    background: rgba(2, 132, 199, 0.08);
+}
+
+html.light .btn-ghost {
+    color: #475569;
+}
+
+html.light .btn-ghost:hover {
+    color: var(--cyan-glow);
+    background: rgba(2, 132, 199, 0.06);
+}
+
+html.light .hero-stats {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(226, 232, 240, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+html.light .stat-number {
+    color: #0f172a;
+}
+
+html.light .stat-divider {
+    background: rgba(226, 232, 240, 0.9);
+}
+
+html.light .glass-panel {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(226, 232, 240, 0.85);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+html.light .glass-panel:hover {
+    border-color: rgba(2, 132, 199, 0.4);
+    box-shadow: 0 15px 35px -5px rgba(2, 132, 199, 0.12);
+}
+
+html.light .section-darker {
+    background: rgba(241, 245, 249, 0.6);
+    border-top-color: rgba(226, 232, 240, 0.85);
+    border-bottom-color: rgba(226, 232, 240, 0.85);
+}
+
+html.light .project-banner {
+    background: rgba(241, 245, 249, 0.9);
+    border-bottom-color: rgba(226, 232, 240, 0.85);
+}
+
+html.light .project-tech-flow {
+    background: #ffffff;
+    border-color: rgba(226, 232, 240, 0.9);
+    color: #475569;
+}
+
+html.light .project-tech-flow span {
+    color: #0f172a;
+}
+
+html.light .key-point {
+    color: #334155;
+}
+
+html.light .tag,
+html.light .skill-pill,
+html.light .badge-sm {
+    background: #ffffff;
+    border-color: rgba(226, 232, 240, 0.9);
+    color: #334155;
+}
+
+html.light .skill-pill:hover {
+    background: #f1f5f9;
+    border-color: var(--cyan-glow);
+}
+
+html.light .timeline-marker {
+    background: #ffffff;
+    border-color: rgba(203, 213, 225, 0.9);
+}
+
+html.light .marker-dot {
+    background-color: #94a3b8;
+}
+
+html.light .timeline-type {
+    background: rgba(0, 0, 0, 0.05);
+    color: #475569;
+}
+
+html.light .contact-item {
+    background: #ffffff;
+    border-color: rgba(226, 232, 240, 0.9);
+}
+
+html.light .contact-item:hover {
+    background: #f8fafc;
+    border-color: var(--cyan-glow);
+}
+
+html.light .copy-btn {
+    border-color: rgba(203, 213, 225, 0.9);
+    color: #475569;
+}
+
+html.light .copy-btn:hover {
+    background: #f1f5f9;
+    color: var(--cyan-glow);
+}
+
+html.light .form-group input,
+html.light .form-group textarea {
+    background: #ffffff;
+    border-color: rgba(203, 213, 225, 0.9);
+    color: #0f172a;
+}
+
+html.light .form-group label {
+    color: #1e293b;
+}
+
+html.light .site-footer {
+    background: #e2e8f0;
+    border-top-color: rgba(203, 213, 225, 0.8);
+}
+
+html.light .footer-text,
+html.light .footer-bottom {
+    color: #64748b;
+}
+
+html.light .mobile-drawer {
+    background: #ffffff;
+    border-left-color: rgba(226, 232, 240, 0.9);
+}
+
+html.light .drawer-title,
+html.light .close-btn {
+    color: #0f172a;
+}
+
+html.light .mobile-link {
+    color: #334155;
+}
+
+html.light .mobile-link:hover,
+html.light .mobile-link.active {
+    color: var(--cyan-glow);
+    background: rgba(2, 132, 199, 0.08);
+}
+
+html.light .mobile-toggle .bar {
+    background: #0f172a;
+}
+
+html.light .back-to-top-btn {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: rgba(203, 213, 225, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
