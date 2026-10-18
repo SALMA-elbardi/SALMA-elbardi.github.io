@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salma El Bardi | Élève Ingénieure en Data Engineering & Intelligence Artificielle</title>
+    <meta name="description" content="Portfolio de Salma El Bardi - Élève ingénieure en 5ᵉ année à l'ENSA Fès (1ère promotion Data & IA). Pipelines ETL/ELT, architecture Medallion, et IA multi-agents. Recherche Stage PFE 6 mois (Début 2027).">
+    <meta name="keywords" content="Salma El Bardi, Data Engineering, Intelligence Artificielle, ENSA Fès, Apache Hop, Kafka, PySpark, CrewAI, Ollama, Stage PFE 2027">
+    <meta name="author" content="Salma El Bardi">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Ambient Glow & Grid -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Header & Navigation -->
+    <header id="header" class="site-header">
+        <div class="container header-container">
+            <a href="#accueil" class="brand-logo" aria-label="Accueil Salma El Bardi">
+                <span class="logo-symbol">&lt;/&gt;</span>
+                <span class="logo-text">Salma<span class="gradient-text">.DataAI</span></span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Navigation principale">
+                <ul class="nav-links">
+                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                    <li><a href="#a-propos" class="nav-link">À propos</a></li>
+                    <li><a href="#competences" class="nav-link">Compétences</a></li>
+                    <li><a href="#projets" class="nav-link">Projets</a></li>
+                    <li><a href="#parcours" class="nav-link">Parcours</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Availability Badge & Mobile Toggle -->
+            <div class="header-actions">
+                <div class="status-badge" title="Statut actuel">
+                    <span class="pulsing-dot"></span>
+                    <span class="badge-label">PFE Début 2027</span>
+                </div>
+                
+                <a href="#contact" class="btn btn-sm btn-outline header-cta">Me contacter</a>
+
+                <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="mobile-drawer" aria-hidden="true">
+            <div class="drawer-header">
+                <span class="drawer-title">Navigation</span>
+                <button id="mobile-close-btn" class="close-btn" aria-label="Fermer le menu">&times;</button>
+            </div>
+            <ul class="mobile-links">
+                <li><a href="#accueil" class="mobile-link">Accueil</a></li>
+                <li><a href="#a-propos" class="mobile-link">À propos</a></li>
+                <li><a href="#competences" class="mobile-link">Compétences</a></li>
+                <li><a href="#projets" class="mobile-link">Projets</a></li>
+                <li><a href="#parcours" class="mobile-link">Parcours</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
+            </ul>
+            <div class="mobile-drawer-footer">
+                <div class="pfe-alert-box">
+                    <span class="sparkle-icon">✨</span>
+                    <div>
+                        <strong>Objectif Stage PFE</strong>
+                        <p>6 mois &bull; Début 2027</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Accueil (Hero) -->
+        <section id="accueil" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="opportunity-chip">
+                        <span class="chip-glow"></span>
+                        <span class="chip-icon">🎯</span>
+                        <span class="chip-text">À LA RECHERCHE D'UN STAGE PFE DE 6 MOIS (Début 2027)</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Bonjour, je suis <br>
+                        <span class="gradient-text glow-text">Salma El Bardi</span>
+                    </h1>
+
+                    <h2 class="hero-subtitle">
+                        <span class="terminal-prompt">$</span> Élève ingénieure en <span class="highlight-cyan">Data Engineering</span> & <span class="highlight-purple">Intelligence Artificielle</span>
+                    </h2>
+
+                    <p class="hero-description">
+                        Je conçois des architectures de données robustes et développe des systèmes intelligents : 
+                        <strong>pipelines de données (ETL/ELT)</strong>, <strong>architectures Medallion</strong>, et <strong>solutions IA (LLM locaux/Multi-Agents)</strong>.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#projets" class="btn btn-primary">
+                            <span>Explorer mes projets</span>
+                            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Me contacter</span>
+                        </a>
+                        <a href="mailto:salma.elbardi@example.com" class="btn btn-ghost" title="Envoyer un email directement">
+                            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>salma.elbardi@example.com</span>
+                        </a>
+                    </div>
+
+                    <!-- Micro Stats Bar -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">5ᵉ Année</span>
+                            <span class="stat-label">ENSA Fès</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <span class="stat-number">1ère Promo</span>
+                            <span class="stat-label">Data & IA</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <span class="stat-number">4+ Projets</span>
+                            <span class="stat-label">Production & R&D</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card highlight-stat">
+                            <span class="stat-number">6 Mois</span>
+                            <span class="stat-label">Stage PFE 2027</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Tech Terminal Card -->
+                <div class="hero-visual">
+                    <div class="glass-terminal-card">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">salma@data-ai-engine: ~</span>
+                            <span class="terminal-badge">LIVE MONITOR</span>
+                        </div>
+                        <div class="terminal-body font-mono">
+                            <div class="code-line"><span class="token-comment">// Architecture & Data Stack Overview</span></div>
+                            <div class="code-line"><span class="token-keyword">const</span> <span class="token-var">engineer</span> = {</div>
+                            <div class="code-line indent-1"><span class="token-prop">name</span>: <span class="token-string">"Salma El Bardi"</span>,</div>
+                            <div class="code-line indent-1"><span class="token-prop">school</span>: <span class="token-string">"ENSA Fès (Promotion 1 Data/IA)"</span>,</div>
+                            <div class="code-line indent-1"><span class="token-prop">coreExpertise</span>: [</div>
+                            <div class="code-line indent-2"><span class="token-string">"Streaming (Kafka)"</span>,</div>
+                            <div class="code-line indent-2"><span class="token-string">"Distributed ETL (PySpark)"</span>,</div>
+                            <div class="code-line indent-2"><span class="token-string">"Multi-Agent AI (CrewAI + Ollama)"</span>,</div>
+                            <div class="code-line indent-2"><span class="token-string">"Warehouse & BI (Hop + Power BI)"</span></div>
+                            <div class="code-line indent-1">],</div>
+                            <div class="code-line indent-1"><span class="token-prop">availability</span>: <span class="token-string highlight-green">"PFE 6 mois (Début 2027)"</span>,</div>
+                            <div class="code-line indent-1"><span class="token-prop">pipelineHealth</span>: <span class="token-number">100.0</span> <span class="token-comment">// Medallion ready</span></div>
+                            <div class="code-line">};</div>
+                            
+                            <div class="terminal-divider"></div>
+                            
+                            <div class="stream-feed">
+                                <div class="feed-item"><span class="feed-tag tag-kafka">KAFKA</span> Ingestion flux continu validée (Docker)</div>
+                                <div class="feed-item"><span class="feed-tag tag-spark">SPARK</span> Job PySpark / MinIO Parquet : Optimisé</div>
+                                <div class="feed-item"><span class="feed-tag tag-ai">CREWAI</span> Agents RAG Ollama : Prêts pour l'inférence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section À propos -->
+        <section id="a-propos" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">01 &bull; PRÉSENTATION</span>
+                    <h2 class="section-title">À propos de <span class="gradient-text">moi</span></h2>
+                    <p class="section-subtitle">Passionnée par la convergence du Big Data scalable et de l'Intelligence Artificielle appliquée.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-main-card glass-panel">
+                        <div class="badge-role">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                            <span>ENSA Fès &bull; Filière d'Excellence</span>
+                        </div>
+                        <h3 class="about-highlight-title">
+                            Élève ingénieure en 5ᵉ année à l'ENSA Fès, issue de la 1ère promotion de la filière Data Engineering & IA.
+                        </h3>
+                        <p class="about-text">
+                            Je me passionne pour la conception de <strong>pipelines scalables</strong> et les <strong>architectures RAG</strong> (Retrieval-Augmented Generation). Mon parcours académique et mes réalisations pratiques me permettent de maîtriser l'ensemble du cycle de vie de la donnée : depuis l'ingestion brute et le streaming haute cadence, jusqu'à l'orchestration de modèles IA génératifs et d'agents intelligents autonomes.
+                        </p>
+                        <p class="about-text">
+                            Rigoureuse et orientée résolution de problèmes concrets, j'ai notamment consolidé mes compétences lors de mon stage chez <strong>Acacia Afrique Système</strong>, où j'ai centralisé les données d'un ERP industriel complexe pour le pilotage décisionnel.
+                        </p>
+
+                        <div class="pfe-callout">
+                            <div class="callout-icon">🎯</div>
+                            <div class="callout-content">
+                                <strong>Recherche active : Stage PFE de 6 mois (Début 2027)</strong>
+                                <span>Disponible pour intégrer une équipe d'ingénierie Data / IA ambitieuse et relever des défis techniques d'envergure.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-pillars-column">
+                        <div class="pillar-card glass-panel">
+                            <div class="pillar-icon-box cyan-glow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                            </div>
+                            <div class="pillar-text">
+                                <h4>Data Engineering & Scalabilité</h4>
+                                <p>Conception d'architectures Medallion (Bronze / Silver / Gold), pipelines ETL/ELT distribués et flux de streaming temps réel.</p>
+                            </div>
+                        </div>
+
+                        <div class="pillar-card glass-panel">
+                            <div class="pillar-icon-box purple-glow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4c0 .5-.1 1-.3 1.4L18 10h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6c0-1.1.9-2 2-2h2l2.3-2.6C8.1 7 8 6.5 8 6a4 4 0 0 1 4-4z"/><circle cx="12" cy="6" r="1.5"/></svg>
+                            </div>
+                            <div class="pillar-text">
+                                <h4>Systèmes Multi-Agents & RAG</h4>
+                                <p>Automatisation métier avec CrewAI, orchestration d'agents collaboratifs, et déploiement de LLM locaux sécurisés via Ollama.</p>
+                            </div>
+                        </div>
+
+                        <div class="pillar-card glass-panel">
+                            <div class="pillar-icon-box emerald-glow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>
+                            </div>
+                            <div class="pillar-text">
+                                <h4>Data Warehouse & Business Intelligence</h4>
+                                <p>Modélisation dimensionnelle en étoile, intégration ERP (Sage X3), création de dashboards analytiques exécutifs avec Power BI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Compétences (Cards visuelles) -->
+        <section id="competences" class="section section-darker">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">02 &bull; EXPERTISE TECHNIQUE</span>
+                    <h2 class="section-title">Mes <span class="gradient-text">Compétences</span></h2>
+                    <p class="section-subtitle">Une panoplie d'outils modernes pour transformer la donnée brute en intelligence actionnable.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Carte 1: Data Engineering -->
+                    <div class="skill-card glass-panel">
+                        <div class="card-glow-top cyan"></div>
+                        <div class="skill-card-header">
+                            <div class="skill-icon-wrap cyan">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                            </div>
+                            <div>
+                                <span class="category-badge">Big Data & Flux</span>
+                                <h3 class="skill-category-title">Data Engineering</h3>
+                            </div>
+                        </div>
+                        <p class="skill-category-desc">
+                            Ingestion, transformation distribuée et persistance haute performance dans des environnements data modernes.
+                        </p>
+                        <div class="skills-pills-list">
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Apache Hop</span>
+                                <span class="pill-role">ETL/ELT</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Apache Kafka</span>
+                                <span class="pill-role">Streaming</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">PySpark</span>
+                                <span class="pill-role">Distribué</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">MinIO S3</span>
+                                <span class="pill-role">Data Lake</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 2: Bases de données & BI -->
+                    <div class="skill-card glass-panel">
+                        <div class="card-glow-top purple"></div>
+                        <div class="skill-card-header">
+                            <div class="skill-icon-wrap purple">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                            </div>
+                            <div>
+                                <span class="category-badge">Stockage & Décisionnel</span>
+                                <h3 class="skill-category-title">Bases de données & BI</h3>
+                            </div>
+                        </div>
+                        <p class="skill-category-desc">
+                            Modélisation relationnelle, entreposage de données et création de tableaux de bord interactifs à forte valeur ajoutée.
+                        </p>
+                        <div class="skills-pills-list">
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">SQL Server</span>
+                                <span class="pill-role">RDBMS</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">PostgreSQL</span>
+                                <span class="pill-role">Vector/SQL</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Power BI</span>
+                                <span class="pill-role">DAX & KPI</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Microsoft Fabric</span>
+                                <span class="pill-role">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 3: IA & ML -->
+                    <div class="skill-card glass-panel">
+                        <div class="card-glow-top emerald"></div>
+                        <div class="skill-card-header">
+                            <div class="skill-icon-wrap emerald">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="5" cy="19" r="2"/><line x1="10.5" y1="10.5" x2="6.5" y2="6.5"/><line x1="13.5" y1="10.5" x2="17.5" y2="6.5"/><line x1="10.5" y1="13.5" x2="6.5" y2="17.5"/><line x1="13.5" y1="13.5" x2="17.5" y2="17.5"/></svg>
+                            </div>
+                            <div>
+                                <span class="category-badge">Intelligence Artificielle</span>
+                                <h3 class="skill-category-title">IA & Machine Learning</h3>
+                            </div>
+                        </div>
+                        <p class="skill-category-desc">
+                            Développement de solutions agentiques, inférence locale LLM, modélisation prédictive et serving d'API ultra-rapides.
+                        </p>
+                        <div class="skills-pills-list">
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">CrewAI</span>
+                                <span class="pill-role">Multi-Agents</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Ollama</span>
+                                <span class="pill-role">LLM Locaux</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">MLflow</span>
+                                <span class="pill-role">MLOps</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">TensorFlow / Keras</span>
+                                <span class="pill-role">Deep Learning</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">FastAPI</span>
+                                <span class="pill-role">API Serving</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte 4: DevOps & Outils -->
+                    <div class="skill-card glass-panel">
+                        <div class="card-glow-top amber"></div>
+                        <div class="skill-card-header">
+                            <div class="skill-icon-wrap amber">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"/><path d="m21 12-4-2.3v4.6z"/></svg>
+                            </div>
+                            <div>
+                                <span class="category-badge">Infra & Monitoring</span>
+                                <h3 class="skill-category-title">DevOps & Outils</h3>
+                            </div>
+                        </div>
+                        <p class="skill-category-desc">
+                            Conteneurisation reproductible, orchestration de services et observabilité continue des flux de production.
+                        </p>
+                        <div class="skills-pills-list">
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Docker</span>
+                                <span class="pill-role">Containers</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Docker Compose</span>
+                                <span class="pill-role">Orchestration</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Prometheus</span>
+                                <span class="pill-role">Metrics</span>
+                            </div>
+                            <div class="skill-pill">
+                                <span class="pill-dot"></span>
+                                <span class="pill-name">Grafana</span>
+                                <span class="pill-role">Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projets Phares (Cards visuelles) -->
+        <section id="projets" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">03 &bull; RÉALISATIONS</span>
+                    <h2 class="section-title">Projets <span class="gradient-text">Phares</span></h2>
+                    <p class="section-subtitle">Cas concrets alliant robustesse d'ingénierie data et innovation en intelligence artificielle.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Projet 1: Data Warehouse & BI (Acacia Afrique Système) -->
+                    <article class="project-card glass-panel">
+                        <div class="project-banner">
+                            <div class="project-meta-top">
+                                <span class="project-type-tag highlight-badge-blue">Stage Entreprise</span>
+                                <span class="project-date">2026</span>
+                            </div>
+                            <div class="project-tech-flow">
+                                <span>ERP Sage X3</span> &rarr; <span>Apache Hop</span> &rarr; <span>SQL Server</span> &rarr; <span>Power BI</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-body">
+                            <h3 class="project-title">Data Warehouse & BI &bull; Acacia Afrique Système</h3>
+                            <h4 class="project-subtitle">Centralisation ERP Sage X3 avec Apache Hop et Power BI</h4>
+                            
+                            <p class="project-description">
+                                Conception et déploiement d'une solution décisionnelle de bout en bout pour centraliser les données issues de l'ERP Sage X3. Automatisation complète des flux d'extraction et de transformation, et modélisation d'un schéma dimensionnel optimisé pour le reporting stratégique.
+                            </p>
+
+                            <div class="project-key-points">
+                                <div class="key-point">
+                                    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Pipelines ETL résilients avec <strong>Apache Hop</strong> sans interruption.</span>
+                                </div>
+                                <div class="key-point">
+                                    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Dashboards exécutifs <strong>Power BI</strong> avec mesures DAX avancées.</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="tag">Apache Hop</span>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">SQL Server</span>
+                                <span class="tag">Sage X3 ERP</span>
+                                <span class="tag">Data Modeling</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2: MVP Système Multi-Agents -->
+                    <article class="project-card glass-panel">
+                        <div class="project-banner">
+                            <div class="project-meta-top">
+                                <span class="project-type-tag highlight-badge-purple">IA & Multi-Agents</span>
+                                <span class="project-date">Projet Avancé</span>
+                            </div>
+                            <div class="project-tech-flow">
+                                <span>CrewAI Agents</span> &rarr; <span>RAG Ollama (Local)</span> &rarr; <span>FastAPI</span> &rarr; <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-body">
+                            <h3 class="project-title">MVP Système Multi-Agents</h3>
+                            <h4 class="project-subtitle">Automatisation métier avec CrewAI, FastAPI, PostgreSQL et RAG Ollama</h4>
+                            
+                            <p class="project-description">
+                                Système autonome multi-agents capable de décomposer, analyser et exécuter des tâches métier complexes. Exploitation d'un pipeline RAG basé sur des LLMs locaux via Ollama garantissant la confidentialité absolue des documents d'entreprise.
+                            </p>
+
+                            <div class="project-key-points">
+                                <div class="key-point">
+                                    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Orchestration collaborative d'agents spécialisés (<strong>CrewAI</strong>).</span>
+                                </div>
+                                <div class="key-point">
+                                    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Serving asynchrone haute performance via <strong>FastAPI</strong> et <strong>PostgreSQL</strong>.</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="tag">CrewAI</span>
+                                <span class="tag">Ollama LLM</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">RAG Architecture</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 3: Pipeline Data Analytics -->
+                    <article class="project-card glass-panel">
+                        <div class="project-banner">
+                            <div class="project-meta-top">
+                                <span class="project-type-tag highlight-badge-cyan">Big Data Analytics</span>
+                                <span class="project-date">Distributed</span>
+                            </div>
+                            <div class="project-tech-flow">
+                                <span>Raw Tech Jobs</span> &rarr; <span>PySpark Ingestion</span> &rarr; <span>Cleaning</span> &rarr; <span>MinIO S3 (Parquet)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-body">
+                            <h3 class="project-title">Pipeline Data Analytics</h3>
+                            <h4 class="project-subtitle">ETL d'offres d'emploi tech avec PySpark et MinIO</h4>
+                            
+                            <p class="project-description">
+                                Conception d'un pipeline d'ingestion et de transformation distribuée de volumétries importantes d'annonces de recrutement tech. Nettoyage, structuration des compétences requises et stockage columnar en format Parquet dans un bucket MinIO compatible S3.
+                            </p>
+
+                            <div class="project-key-points">
+                                <div class="key-point">
+                                    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Calcul distribué et transformations vectorielles avec <strong>PySpark</strong>.</span>
+                                </div>
+                                <div class="key-point">
+                                    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Stockage objet <strong>MinIO S3</strong> optimisé pour requêtes analytiques rapides.</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="tag">PySpark</span>
+                                <span class="tag">MinIO S3</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Parquet</span>
+                                <span class="tag">Data Lake</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 4: Architecture Medallion & Streaming -->
+                    <article class="project-card glass-panel">
+                        <div class="project-banner">
+                            <div class="project-meta-top">
+                                <span class="project-type-tag highlight-badge-emerald">Temps Réel & Docker</span>
+                                <span class="project-date">Architecture</span>
+                            </div>
+                            <div class="project-tech-flow">
+                                <span>Events</span> &rarr; <span>Kafka Broker</span> &rarr; <span>Bronze</span> &rarr; <span>Silver</span> &rarr; <span>Gold Layer</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-body">
+                            <h3 class="project-title">Architecture Medallion & Streaming</h3>
+                            <h4 class="project-subtitle">Pipeline temps réel avec Apache Kafka et Docker</h4>
+                            
+                            <p class="project-description">
+                                Implémentation d'un pipeline de streaming événementiel appliquant les principes de l'architecture Medallion. Ingestion brute continue (Bronze), assainissement et validation des données (Silver), et agrégation finale orientée analytique temps réel (Gold).
+                            </p>
+
+                            <div class="project-key-points">
+                                <div class="key-point">
+                                    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Clustering <strong>Apache Kafka</strong> et gestion des topics événementiels.</span>
+                                </div>
+                                <div class="key-point">
+                                    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Environnement entièrement reproductible et orchestré sous <strong>Docker Compose</strong>.</span>
+                                </div>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="tag">Apache Kafka</span>
+                                <span class="tag">Docker Compose</span>
+                                <span class="tag">Medallion Pattern</span>
+                                <span class="tag">Real-Time Streaming</span>
+                                <span class="tag">Data Quality</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Parcours (Timeline) -->
+        <section id="parcours" class="section section-darker">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">04 &bull; EXPÉRIENCE & FORMATION</span>
+                    <h2 class="section-title">Mon <span class="gradient-text">Parcours</span></h2>
+                    <p class="section-subtitle">L'évolution de mes compétences académiques et professionnelles vers l'excellence Data & IA.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+
+                    <!-- Parcours Item 1: Stage Acacia -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <span class="marker-dot"></span>
+                        </div>
+                        <div class="timeline-content glass-panel">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2026 &bull; 2 mois</span>
+                                <span class="timeline-type">Stage Entreprise</span>
+                            </div>
+                            <h3 class="timeline-role">Stage Data & IA</h3>
+                            <h4 class="timeline-company">Acacia Afrique Système</h4>
+                            <p class="timeline-text">
+                                Centralisation des flux d'un ERP industriel (Sage X3) avec Apache Hop, conception d'un data warehouse décisionnel sur SQL Server et déploiement de dashboards de pilotage sous Power BI.
+                            </p>
+                            <div class="timeline-badges">
+                                <span class="badge-sm">Apache Hop</span>
+                                <span class="badge-sm">Sage X3</span>
+                                <span class="badge-sm">Power BI</span>
+                                <span class="badge-sm">SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parcours Item 2: Aujourd'hui ENSA Fès -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker active-marker">
+                            <span class="marker-dot"></span>
+                        </div>
+                        <div class="timeline-content glass-panel highlight-border">
+                            <div class="timeline-meta">
+                                <span class="timeline-date highlight-cyan">Aujourd'hui &bull; En cours</span>
+                                <span class="timeline-type">Cycle Ingénieur d'État</span>
+                            </div>
+                            <h3 class="timeline-role">5ᵉ année cycle ingénieur Data Engineering & IA</h3>
+                            <h4 class="timeline-company">École Nationale des Sciences Appliquées (ENSA) de Fès</h4>
+                            <p class="timeline-text">
+                                Membre de la <strong>1ère promotion</strong> historique de la filière Data Engineering & Intelligence Artificielle. Formation d'élite couvrant le Big Data distribué, l'IA générative, l'architecture cloud et le MLOps.
+                            </p>
+                            <div class="timeline-badges">
+                                <span class="badge-sm">1ère Promotion</span>
+                                <span class="badge-sm">Data Engineering</span>
+                                <span class="badge-sm">IA & LLM</span>
+                                <span class="badge-sm">ENSA Fès</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parcours Item 3: Objectif PFE Début 2027 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker next-marker">
+                            <span class="marker-dot"></span>
+                        </div>
+                        <div class="timeline-content glass-panel pfe-timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date highlight-green">Début 2027 &bull; 6 mois</span>
+                                <span class="timeline-type target">Objectif Actuel</span>
+                            </div>
+                            <h3 class="timeline-role">Stage PFE de Fin d'Études (6 mois)</h3>
+                            <h4 class="timeline-company">Opportunité Data Engineering / Intelligence Artificielle</h4>
+                            <p class="timeline-text">
+                                En quête d'un projet d'envergure en entreprise : conception de plateformes de données, pipelines de streaming, systèmes multi-agents ou intégration de solutions IA de pointe.
+                            </p>
+                            <div class="timeline-cta">
+                                <a href="#contact" class="btn btn-sm btn-primary">Proposer une opportunité</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">05 &bull; CONTACT</span>
+                    <h2 class="section-title">Construisons l'avenir <span class="gradient-text">ensemble</span></h2>
+                    <p class="section-subtitle">Je suis à l'écoute des opportunités de stage PFE de 6 mois (Début 2027) et de collaborations techniques.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Coordonnées & Liens -->
+                    <div class="contact-info-card glass-panel">
+                        <h3 class="contact-card-title">Salma El Bardi</h3>
+                        <p class="contact-card-subtitle">Élève Ingénieure en Data Engineering & IA</p>
+                        
+                        <div class="contact-badge-status">
+                            <span class="pulsing-dot"></span>
+                            <span>Disponible pour Stage PFE &bull; Début 2027</span>
+                        </div>
+
+                        <div class="contact-details-list">
+                            <div class="contact-item">
+                                <div class="item-icon-circle">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-label">Email professionnel</span>
+                                    <a href="mailto:salma.elbardi@example.com" class="item-value">salma.elbardi@example.com</a>
+                                </div>
+                                <button id="copy-email-btn" class="copy-btn" title="Copier l'adresse email" aria-label="Copier l'adresse email">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <span class="copy-feedback">Copié !</span>
+                                </button>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="item-icon-circle">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-label">GitHub</span>
+                                    <a href="https://github.com/SALMA-elbardi" target="_blank" rel="noopener noreferrer" class="item-value">github.com/SALMA-elbardi</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="item-icon-circle">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-label">LinkedIn</span>
+                                    <a href="https://linkedin.com/in/salma-elbardi" target="_blank" rel="noopener noreferrer" class="item-value">linkedin.com/in/salma-elbardi</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="item-icon-circle">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-label">Localisation</span>
+                                    <span class="item-value">Fès / Casablanca / Mobilité nationale &amp; internationale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire de contact rapide -->
+                    <div class="contact-form-card glass-panel">
+                        <h3 class="form-title">Envoyez-moi un message direct</h3>
+                        <p class="form-desc">Vous recherchez une stagiaire PFE motivée ou souhaitez échanger sur un projet ?</p>
+                        
+                        <form id="contact-form" class="styled-form">
+                            <div class="form-group">
+                                <label for="form-name">Votre nom / Entreprise</label>
+                                <input type="text" id="form-name" required placeholder="Ex: Recruteur / Tech Lead">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-email">Votre adresse email</label>
+                                <input type="email" id="form-email" required placeholder="nom@entreprise.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-subject">Sujet de l'opportunité</label>
+                                <input type="text" id="form-subject" required placeholder="Offre Stage PFE 2027 / Échange technique">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="4" required placeholder="Bonjour Salma, nous recherchons un profil Data & IA pour notre équipe..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span>Envoyer le message</span>
+                                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            </button>
+                            <div id="form-notification" class="form-alert" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page (Footer) -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">Salma<span class="gradient-text">.DataAI</span></span>
+                <p class="footer-text">Élève ingénieure en Data Engineering &amp; Intelligence Artificielle &bull; ENSA Fès (1ère Promo)</p>
+            </div>
+
+            <div class="footer-nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#a-propos">À propos</a>
+                <a href="#competences">Compétences</a>
+                <a href="#projets">Projets</a>
+                <a href="#parcours">Parcours</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Salma El Bardi. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/SALMA-elbardi" target="_blank" rel="noopener noreferrer">GitHub: @SALMA-elbardi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Retour en haut de page">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
