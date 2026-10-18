@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyEmailBtn = document.getElementById('copy-email-btn');
     if (copyEmailBtn) {
         copyEmailBtn.addEventListener('click', async () => {
-            const email = 'salma.elbardi@example.com';
+            const email = 'salma15bardi@gmail.com';
             try {
                 await navigator.clipboard.writeText(email);
                 copyEmailBtn.classList.add('copied');
