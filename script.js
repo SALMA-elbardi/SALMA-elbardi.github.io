@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --------------------------------------------------------------------------
     const TRANSLATIONS = {
         fr: {
-            pageTitle: "Salma El Bardi | Élève Ingénieure en Data Engineering & Intelligence Artificielle",
-            metaDesc: "Portfolio de Salma El Bardi - Élève ingénieure en 5ᵉ année à l'ENSA Fès. Pipelines ETL/ELT, architecture Medallion, et IA multi-agents. À la recherche d'un stage PFE (Début 2027).",
+            pageTitle: "Salma El Bardi | Élève Ingénieure en Data Science & Intelligence Artificielle",
+            metaDesc: "Portfolio de Salma El Bardi - Élève ingénieure en 5ᵉ année à l'ENSA Fès. Data Science, Machine Learning, Data Engineering et IA. À la recherche d'un stage PFE.",
             themeDarkTitle: "Passer en mode sombre",
             themeLightTitle: "Passer en mode clair",
             copyEmailTitle: "Copier l'adresse email",
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             contactSuccess: (name) => `Merci <strong>${name}</strong> ! Votre message a été préparé avec succès. Salma vous répondra sous 24h.`
         },
         en: {
-            pageTitle: "Salma El Bardi | Data Engineering & AI Student Engineer",
-            metaDesc: "Portfolio of Salma El Bardi - 5th-year engineering student at ENSA Fez. ETL/ELT pipelines, Medallion architecture, and multi-agent AI. Seeking a graduation internship (Early 2027).",
+            pageTitle: "Salma El Bardi | Data Science & AI Student Engineer",
+            metaDesc: "Portfolio of Salma El Bardi - 5th-year engineering student at ENSA Fez. Data Science, Machine Learning, Data Engineering, and AI. Seeking a graduation internship (PFE).",
             themeDarkTitle: "Switch to dark mode",
             themeLightTitle: "Switch to light mode",
             copyEmailTitle: "Copy email address",
