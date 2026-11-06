@@ -18,9 +18,9 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=10">
 
-    <!-- Theme Initialization Script (Prevents FOUC) -->
+    <!-- Theme & Language Initialization Script (Prevents FOUC) -->
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
@@ -33,6 +33,13 @@
             } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
                 document.documentElement.classList.remove('dark');
                 document.documentElement.classList.add('light');
+            }
+
+            const savedLang = localStorage.getItem('portfolio_lang');
+            if (savedLang === 'en') {
+                document.documentElement.setAttribute('lang', 'en');
+            } else {
+                document.documentElement.setAttribute('lang', 'fr');
             }
         })();
     </script>
@@ -55,16 +62,25 @@
             <!-- Desktop Navigation -->
             <nav class="desktop-nav" aria-label="Navigation principale">
                 <ul class="nav-links">
-                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
-                    <li><a href="#a-propos" class="nav-link">À propos</a></li>
-                    <li><a href="#competences" class="nav-link">Compétences</a></li>
-                    <li><a href="#projets" class="nav-link">Projets</a></li>
-                    <li><a href="#parcours" class="nav-link">Parcours</a></li>
+                    <li><a href="#accueil" class="nav-link active" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                    <li><a href="#a-propos" class="nav-link" data-fr="À propos" data-en="About">À propos</a></li>
+                    <li><a href="#competences" class="nav-link" data-fr="Compétences" data-en="Skills">Compétences</a>
+                    </li>
+                    <li><a href="#projets" class="nav-link" data-fr="Projets" data-en="Projects">Projets</a></li>
+                    <li><a href="#parcours" class="nav-link" data-fr="Parcours" data-en="Journey">Parcours</a></li>
                 </ul>
             </nav>
 
             <!-- Theme Toggle & Header Actions -->
             <div class="header-actions">
+                <!-- Switch de langue FR / EN -->
+                <div class="lang-switch" role="group" aria-label="Sélecteur de langue">
+                    <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en français"
+                        title="Français">FR</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English"
+                        title="English">EN</button>
+                </div>
+
                 <button id="theme-toggle-btn" class="theme-toggle"
                     aria-label="Basculer entre le mode sombre et le mode clair" title="Basculer le thème">
                     <!-- Sun Icon (affiché en mode sombre) -->
@@ -87,7 +103,8 @@
                     </svg>
                 </button>
 
-                <a href="#contact" class="btn btn-sm btn-outline header-cta">Me contacter</a>
+                <a href="#contact" class="btn btn-sm btn-outline header-cta" data-fr="Me contacter"
+                    data-en="Contact me">Me contacter</a>
 
                 <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
                     <span class="bar"></span>
@@ -100,23 +117,24 @@
         <!-- Mobile Drawer Menu -->
         <div id="mobile-menu" class="mobile-drawer" aria-hidden="true">
             <div class="drawer-header">
-                <span class="drawer-title">Navigation</span>
+                <span class="drawer-title" data-fr="Navigation" data-en="Navigation">Navigation</span>
                 <button id="mobile-close-btn" class="close-btn" aria-label="Fermer le menu">&times;</button>
             </div>
             <ul class="mobile-links">
-                <li><a href="#accueil" class="mobile-link">Accueil</a></li>
-                <li><a href="#a-propos" class="mobile-link">À propos</a></li>
-                <li><a href="#competences" class="mobile-link">Compétences</a></li>
-                <li><a href="#projets" class="mobile-link">Projets</a></li>
-                <li><a href="#parcours" class="mobile-link">Parcours</a></li>
-                <li><a href="#contact" class="mobile-link">Contact</a></li>
+                <li><a href="#accueil" class="mobile-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="#a-propos" class="mobile-link" data-fr="À propos" data-en="About">À propos</a></li>
+                <li><a href="#competences" class="mobile-link" data-fr="Compétences" data-en="Skills">Compétences</a>
+                </li>
+                <li><a href="#projets" class="mobile-link" data-fr="Projets" data-en="Projects">Projets</a></li>
+                <li><a href="#parcours" class="mobile-link" data-fr="Parcours" data-en="Journey">Parcours</a></li>
+                <li><a href="#contact" class="mobile-link" data-fr="Contact" data-en="Contact">Contact</a></li>
             </ul>
             <div class="mobile-drawer-footer">
                 <div class="pfe-alert-box">
                     <span class="sparkle-icon">✨</span>
                     <div>
-                        <strong>Objectif Stage PFE</strong>
-                        <p>À partir de début 2027</p>
+                        <strong data-fr="Objectif Stage PFE" data-en="PFE Internship Goal">Objectif Stage PFE</strong>
+                        <p data-fr="À partir de début 2027" data-en="Starting early 2027">À partir de début 2027</p>
                     </div>
                 </div>
             </div>
@@ -131,20 +149,27 @@
                     <div class="opportunity-chip">
                         <span class="chip-glow"></span>
                         <span class="chip-bullet" aria-hidden="true">&#9679;</span>
-                        <span class="chip-text">À LA RECHERCHE D'UN STAGE PFE (DÉBUT 2027)</span>
+                        <span class="chip-text" data-fr="À LA RECHERCHE D'UN STAGE PFE (DÉBUT 2027)"
+                            data-en="SEEKING A GRADUATION INTERNSHIP (EARLY 2027)">À LA RECHERCHE D'UN STAGE PFE (DÉBUT
+                            2027)</span>
                     </div>
 
                     <h1 class="hero-title">
-                        Bonjour, je suis <br>
+                        <span class="hero-greeting" data-fr="Bonjour, je suis" data-en="Hello, I am">Bonjour, je
+                            suis</span> <br>
                         <span class="gradient-text glow-text">Salma El Bardi</span>
                     </h1>
 
                     <h2 class="hero-subtitle">
-                        Élève ingénieure en <span class="highlight-cyan">Data
-                            Engineering</span> & <span class="highlight-purple">Intelligence Artificielle</span>
+                        <span data-fr="Élève ingénieure en" data-en="Engineering student in">Élève ingénieure en</span>
+                        <span class="highlight-cyan" data-fr="Data Engineering" data-en="Data Engineering">Data
+                            Engineering</span> & <span class="highlight-purple" data-fr="Intelligence Artificielle"
+                            data-en="Artificial Intelligence">Intelligence Artificielle</span>
                     </h2>
 
-                    <p class="hero-description">
+                    <p class="hero-description"
+                        data-fr="Je conçois des architectures de données robustes et développe des systèmes intelligents : &lt;strong&gt;pipelines de données (ETL/ELT)&lt;/strong&gt;, &lt;strong&gt;architectures Medallion&lt;/strong&gt;, et &lt;strong&gt;solutions IA (LLM locaux/Multi-Agents)&lt;/strong&gt;."
+                        data-en="I design robust data architectures and build intelligent systems: &lt;strong&gt;data pipelines (ETL/ELT)&lt;/strong&gt;, &lt;strong&gt;Medallion architectures&lt;/strong&gt;, and &lt;strong&gt;AI solutions (local LLMs/Multi-Agents)&lt;/strong&gt;.">
                         Je conçois des architectures de données robustes et développe des systèmes intelligents :
                         <strong>pipelines de données (ETL/ELT)</strong>, <strong>architectures Medallion</strong>, et
                         <strong>solutions IA (LLM locaux/Multi-Agents)</strong>.
@@ -152,14 +177,28 @@
 
                     <div class="hero-cta-group">
                         <a href="#projets" class="btn btn-primary">
-                            <span>Explorer mes projets</span>
+                            <span data-fr="Explorer mes projets" data-en="Explore my projects">Explorer mes
+                                projets</span>
                             <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
+                        <a id="hero-cv-btn" href="./assets/cv_salma_el_bardi_fr.pdf" download="CV_Salma_El_Bardi_FR.pdf"
+                            class="btn btn-cv" data-fr-href="./assets/cv_salma_el_bardi_fr.pdf"
+                            data-en-href="./assets/cv_salma_el_bardi_en.pdf"
+                            data-fr-download="CV_Salma_El_Bardi_FR.pdf"
+                            data-en-download="CV_Salma_El_Bardi_EN.pdf">
+                            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            <span data-fr="Télécharger mon CV" data-en="Download my resume">Télécharger mon CV</span>
+                        </a>
                         <a href="#contact" class="btn btn-secondary">
-                            <span>Me contacter</span>
+                            <span data-fr="Me contacter" data-en="Contact me">Me contacter</span>
                         </a>
                         <a href="mailto:salma15bardi@gmail.com" class="btn btn-ghost"
                             title="Envoyer un email directement">
@@ -175,74 +214,25 @@
                     <!-- Micro Stats Bar -->
                     <div class="hero-stats">
                         <div class="stat-card">
-                            <span class="stat-number">5ᵉ Année</span>
+                            <span class="stat-number" data-fr="5ᵉ Année" data-en="5th Year">5ᵉ Année</span>
                             <span class="stat-label">ENSA Fès</span>
                         </div>
                         <div class="stat-divider"></div>
                         <div class="stat-card">
-                            <span class="stat-number">Data & IA</span>
-                            <span class="stat-label">Cycle Ingénieur</span>
+                            <span class="stat-number" data-fr="Data &amp; IA" data-en="Data &amp; AI">Data & IA</span>
+                            <span class="stat-label" data-fr="Cycle Ingénieur" data-en="Master of Engineering">Cycle
+                                Ingénieur</span>
                         </div>
                         <div class="stat-divider"></div>
                         <div class="stat-card">
-                            <span class="stat-number">4+ Projets</span>
-                            <span class="stat-label">Production & R&D</span>
+                            <span class="stat-number" data-fr="4+ Projets" data-en="4+ Projects">4+ Projets</span>
+                            <span class="stat-label" data-fr="Production &amp; R&amp;D"
+                                data-en="Production &amp; R&amp;D">Production & R&D</span>
                         </div>
                         <div class="stat-divider"></div>
                         <div class="stat-card highlight-stat">
-                            <span class="stat-number">Stage PFE</span>
-                            <span class="stat-label">Début 2027</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Interactive Tech Terminal Card -->
-                <div class="hero-visual">
-                    <div class="glass-terminal-card">
-                        <div class="terminal-bar">
-                            <div class="terminal-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-                            <span class="terminal-title">salma@data-ai-engine: ~</span>
-                            <span class="terminal-badge">LIVE MONITOR</span>
-                        </div>
-                        <div class="terminal-body font-mono">
-                            <div class="code-line"><span class="token-comment">// Architecture & Data Stack
-                                    Overview</span></div>
-                            <div class="code-line"><span class="token-keyword">const</span> <span
-                                    class="token-var">engineer</span> = {</div>
-                            <div class="code-line indent-1"><span class="token-prop">name</span>: <span
-                                    class="token-string">"Salma El Bardi"</span>,</div>
-                            <div class="code-line indent-1"><span class="token-prop">school</span>: <span
-                                    class="token-string">"ENSA Fès (Cycle Ingénieur Data/IA)"</span>,</div>
-                            <div class="code-line indent-1"><span class="token-prop">coreExpertise</span>: [</div>
-                            <div class="code-line indent-2"><span class="token-string">"Streaming (Kafka)"</span>,</div>
-                            <div class="code-line indent-2"><span class="token-string">"Distributed ETL
-                                    (PySpark)"</span>,</div>
-                            <div class="code-line indent-2"><span class="token-string">"Multi-Agent AI (CrewAI +
-                                    Ollama)"</span>,</div>
-                            <div class="code-line indent-2"><span class="token-string">"Warehouse & BI (Hop + Power
-                                    BI)"</span></div>
-                            <div class="code-line indent-1">],</div>
-                            <div class="code-line indent-1"><span class="token-prop">availability</span>: <span
-                                    class="token-string highlight-green">"Stage PFE (Début 2027)"</span>,</div>
-                            <div class="code-line indent-1"><span class="token-prop">pipelineHealth</span>: <span
-                                    class="token-number">100.0</span> <span class="token-comment">// Medallion
-                                    ready</span></div>
-                            <div class="code-line">};</div>
-
-                            <div class="terminal-divider"></div>
-
-                            <div class="stream-feed">
-                                <div class="feed-item"><span class="feed-tag tag-kafka">KAFKA</span> Ingestion flux
-                                    continu validée (Docker)</div>
-                                <div class="feed-item"><span class="feed-tag tag-spark">SPARK</span> Job PySpark / MinIO
-                                    Parquet : Optimisé</div>
-                                <div class="feed-item"><span class="feed-tag tag-ai">CREWAI</span> Agents RAG Ollama :
-                                    Prêts pour l'inférence</div>
-                            </div>
+                            <span class="stat-number" data-fr="Stage PFE" data-en="PFE Internship">Stage PFE</span>
+                            <span class="stat-label" data-fr="Début 2027" data-en="Early 2027">Début 2027</span>
                         </div>
                     </div>
                 </div>
@@ -253,9 +243,14 @@
         <section id="a-propos" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">01 &bull; PRÉSENTATION</span>
-                    <h2 class="section-title">À propos de <span class="gradient-text">moi</span></h2>
-                    <p class="section-subtitle">Passionnée par la convergence du Big Data scalable et de l'Intelligence
+                    <span class="section-tag" data-fr="01 &bull; PRÉSENTATION" data-en="01 &bull; ABOUT ME">01 &bull;
+                        PRÉSENTATION</span>
+                    <h2 class="section-title"><span data-fr="À propos de" data-en="About">À propos de</span> <span
+                            class="gradient-text" data-fr="moi" data-en="me">moi</span></h2>
+                    <p class="section-subtitle"
+                        data-fr="Passionnée par la convergence du Big Data scalable et de l'Intelligence Artificielle appliquée."
+                        data-en="Passionate about the convergence of scalable Big Data and applied Artificial Intelligence.">
+                        Passionnée par la convergence du Big Data scalable et de l'Intelligence
                         Artificielle appliquée.</p>
                 </div>
 
@@ -267,19 +262,27 @@
                                 <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
                                 <path d="M6 12v5c3 3 9 3 12 0v-5" />
                             </svg>
-                            <span>ENSA Fès &bull; Filière d'Excellence</span>
+                            <span data-fr="ENSA Fès &bull; Filière d'Excellence"
+                                data-en="ENSA Fez &bull; Track of Excellence">ENSA Fès &bull; Filière
+                                d'Excellence</span>
                         </div>
-                        <h3 class="about-highlight-title">
+                        <h3 class="about-highlight-title"
+                            data-fr="Élève ingénieure en 5ᵉ année à l'ENSA Fès en Data Engineering &amp; Intelligence Artificielle."
+                            data-en="5th-year engineering student at ENSA Fez in Data Engineering &amp; Artificial Intelligence.">
                             Élève ingénieure en 5ᵉ année à l'ENSA Fès en Data Engineering & Intelligence Artificielle.
                         </h3>
-                        <p class="about-text">
+                        <p class="about-text"
+                            data-fr="Je me passionne pour la conception de &lt;strong&gt;pipelines scalables&lt;/strong&gt; et les &lt;strong&gt;architectures RAG&lt;/strong&gt; (Retrieval-Augmented Generation). Mon parcours académique et mes réalisations pratiques me permettent de maîtriser l'ensemble du cycle de vie de la donnée : depuis l'ingestion brute et le streaming haute cadence, jusqu'à l'orchestration de modèles IA génératifs et d'agents intelligents autonomes."
+                            data-en="I am passionate about designing &lt;strong&gt;scalable pipelines&lt;/strong&gt; and &lt;strong&gt;RAG architectures&lt;/strong&gt; (Retrieval-Augmented Generation). My academic background and hands-on projects allow me to master the entire data lifecycle: from raw ingestion and high-throughput streaming, to orchestrating generative AI models and autonomous intelligent agents.">
                             Je me passionne pour la conception de <strong>pipelines scalables</strong> et les
                             <strong>architectures RAG</strong> (Retrieval-Augmented Generation). Mon parcours académique
                             et mes réalisations pratiques me permettent de maîtriser l'ensemble du cycle de vie de la
                             donnée : depuis l'ingestion brute et le streaming haute cadence, jusqu'à l'orchestration de
                             modèles IA génératifs et d'agents intelligents autonomes.
                         </p>
-                        <p class="about-text">
+                        <p class="about-text"
+                            data-fr="Rigoureuse et orientée résolution de problèmes concrets, j'ai notamment consolidé mes compétences lors de mon stage chez &lt;strong&gt;Acacia Afrique Système&lt;/strong&gt;, où j'ai centralisé les données d'un ERP industriel complexe pour le pilotage décisionnel."
+                            data-en="Rigorous and focused on real-world problem-solving, I particularly consolidated my skills during my internship at &lt;strong&gt;Acacia Afrique Système&lt;/strong&gt;, where I centralized complex industrial ERP data for decision-making.">
                             Rigoureuse et orientée résolution de problèmes concrets, j'ai notamment consolidé mes
                             compétences lors de mon stage chez <strong>Acacia Afrique Système</strong>, où j'ai
                             centralisé les données d'un ERP industriel complexe pour le pilotage décisionnel.
@@ -287,14 +290,20 @@
 
                         <div class="pfe-callout">
                             <div class="callout-icon">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
                                     <circle cx="12" cy="12" r="10" />
                                     <polyline points="12 6 12 12 16 14" />
                                 </svg>
                             </div>
                             <div class="callout-content">
-                                <strong>Recherche active : Stage PFE (À partir de début 2027)</strong>
-                                <span>Disponible pour intégrer une équipe d'ingénierie Data / IA ambitieuse et relever
+                                <strong data-fr="Recherche active : Stage PFE (À partir de début 2027)"
+                                    data-en="Actively seeking: PFE Internship (From early 2027)">Recherche active :
+                                    Stage PFE (À partir de début 2027)</strong>
+                                <span
+                                    data-fr="Disponible pour intégrer une équipe d'ingénierie Data / IA ambitieuse et relever des défis techniques d'envergure."
+                                    data-en="Available to join an ambitious Data / AI engineering team and tackle large-scale technical challenges.">Disponible
+                                    pour intégrer une équipe d'ingénierie Data / IA ambitieuse et relever
                                     des défis techniques d'envergure.</span>
                             </div>
                         </div>
@@ -311,8 +320,11 @@
                                 </svg>
                             </div>
                             <div class="pillar-text">
-                                <h4>Data Engineering & Scalabilité</h4>
-                                <p>Conception d'architectures Medallion (Bronze / Silver / Gold), pipelines ETL/ELT
+                                <h4 data-fr="Data Engineering &amp; Scalabilité"
+                                    data-en="Data Engineering &amp; Scalability">Data Engineering & Scalabilité</h4>
+                                <p data-fr="Conception d'architectures Medallion (Bronze / Silver / Gold), pipelines ETL/ELT distribués et flux de streaming temps réel."
+                                    data-en="Design of Medallion architectures (Bronze / Silver / Gold), distributed ETL/ELT pipelines, and real-time streaming flows.">
+                                    Conception d'architectures Medallion (Bronze / Silver / Gold), pipelines ETL/ELT
                                     distribués et flux de streaming temps réel.</p>
                             </div>
                         </div>
@@ -327,8 +339,11 @@
                                 </svg>
                             </div>
                             <div class="pillar-text">
-                                <h4>Systèmes Multi-Agents & RAG</h4>
-                                <p>Automatisation métier avec CrewAI, orchestration d'agents collaboratifs, et
+                                <h4 data-fr="Systèmes Multi-Agents &amp; RAG" data-en="Multi-Agent Systems &amp; RAG">
+                                    Systèmes Multi-Agents & RAG</h4>
+                                <p data-fr="Automatisation métier avec CrewAI, orchestration d'agents collaboratifs, et déploiement de LLM locaux sécurisés via Ollama."
+                                    data-en="Business automation with CrewAI, collaborative agent orchestration, and secure local LLM deployment via Ollama.">
+                                    Automatisation métier avec CrewAI, orchestration d'agents collaboratifs, et
                                     déploiement de LLM locaux sécurisés via Ollama.</p>
                             </div>
                         </div>
@@ -341,8 +356,12 @@
                                 </svg>
                             </div>
                             <div class="pillar-text">
-                                <h4>Data Warehouse & Business Intelligence</h4>
-                                <p>Modélisation dimensionnelle en étoile, intégration ERP (Sage X3), création de
+                                <h4 data-fr="Data Warehouse &amp; Business Intelligence"
+                                    data-en="Data Warehouse &amp; Business Intelligence">Data Warehouse & Business
+                                    Intelligence</h4>
+                                <p data-fr="Modélisation dimensionnelle en étoile, intégration ERP (Sage X3), création de dashboards analytiques exécutifs avec Power BI."
+                                    data-en="Dimensional star-schema modeling, ERP integration (Sage X3), and executive analytical dashboards with Power BI.">
+                                    Modélisation dimensionnelle en étoile, intégration ERP (Sage X3), création de
                                     dashboards analytiques exécutifs avec Power BI.</p>
                             </div>
                         </div>
@@ -355,9 +374,14 @@
         <section id="competences" class="section section-darker">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">02 &bull; EXPERTISE TECHNIQUE</span>
-                    <h2 class="section-title">Mes <span class="gradient-text">Compétences</span></h2>
-                    <p class="section-subtitle">Une panoplie d'outils modernes pour transformer la donnée brute en
+                    <span class="section-tag" data-fr="02 &bull; EXPERTISE TECHNIQUE"
+                        data-en="02 &bull; TECHNICAL EXPERTISE">02 &bull; EXPERTISE TECHNIQUE</span>
+                    <h2 class="section-title"><span data-fr="Mes" data-en="My">Mes</span> <span class="gradient-text"
+                            data-fr="Compétences" data-en="Skills">Compétences</span></h2>
+                    <p class="section-subtitle"
+                        data-fr="Une panoplie d'outils modernes pour transformer la donnée brute en intelligence actionnable."
+                        data-en="A modern toolkit to turn raw data into actionable intelligence.">Une panoplie d'outils
+                        modernes pour transformer la donnée brute en
                         intelligence actionnable.</p>
                 </div>
 
@@ -376,11 +400,14 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="category-badge">Big Data & Flux</span>
+                                <span class="category-badge" data-fr="Big Data &amp; Flux"
+                                    data-en="Big Data &amp; Streaming">Big Data & Flux</span>
                                 <h3 class="skill-category-title">Data Engineering</h3>
                             </div>
                         </div>
-                        <p class="skill-category-desc">
+                        <p class="skill-category-desc"
+                            data-fr="Ingestion, transformation distribuée et persistance haute performance dans des environnements data modernes."
+                            data-en="Ingestion, distributed transformation, and high-performance persistence in modern data environments.">
                             Ingestion, transformation distribuée et persistance haute performance dans des
                             environnements data modernes.
                         </p>
@@ -398,7 +425,7 @@
                             <div class="skill-pill">
                                 <span class="pill-dot"></span>
                                 <span class="pill-name">PySpark</span>
-                                <span class="pill-role">Distribué</span>
+                                <span class="pill-role" data-fr="Distribué" data-en="Distributed">Distribué</span>
                             </div>
                             <div class="skill-pill">
                                 <span class="pill-dot"></span>
@@ -421,11 +448,15 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="category-badge">Stockage & Décisionnel</span>
-                                <h3 class="skill-category-title">Bases de données & BI</h3>
+                                <span class="category-badge" data-fr="Stockage &amp; Décisionnel"
+                                    data-en="Storage &amp; BI">Stockage & Décisionnel</span>
+                                <h3 class="skill-category-title" data-fr="Bases de données &amp; BI"
+                                    data-en="Databases &amp; BI">Bases de données & BI</h3>
                             </div>
                         </div>
-                        <p class="skill-category-desc">
+                        <p class="skill-category-desc"
+                            data-fr="Modélisation relationnelle, entreposage de données et création de tableaux de bord interactifs à forte valeur ajoutée."
+                            data-en="Relational modeling, data warehousing, and interactive high-value dashboard creation.">
                             Modélisation relationnelle, entreposage de données et création de tableaux de bord
                             interactifs à forte valeur ajoutée.
                         </p>
@@ -472,11 +503,15 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="category-badge">Intelligence Artificielle</span>
-                                <h3 class="skill-category-title">IA & Machine Learning</h3>
+                                <span class="category-badge" data-fr="Intelligence Artificielle"
+                                    data-en="Artificial Intelligence">Intelligence Artificielle</span>
+                                <h3 class="skill-category-title" data-fr="IA &amp; Machine Learning"
+                                    data-en="AI &amp; Machine Learning">IA & Machine Learning</h3>
                             </div>
                         </div>
-                        <p class="skill-category-desc">
+                        <p class="skill-category-desc"
+                            data-fr="Développement de solutions agentiques, inférence locale LLM, modélisation prédictive et serving d'API ultra-rapides."
+                            data-en="Development of agentic solutions, local LLM inference, predictive modeling, and ultra-fast API serving.">
                             Développement de solutions agentiques, inférence locale LLM, modélisation prédictive et
                             serving d'API ultra-rapides.
                         </p>
@@ -489,7 +524,7 @@
                             <div class="skill-pill">
                                 <span class="pill-dot"></span>
                                 <span class="pill-name">Ollama</span>
-                                <span class="pill-role">LLM Locaux</span>
+                                <span class="pill-role" data-fr="LLM Locaux" data-en="Local LLMs">LLM Locaux</span>
                             </div>
                             <div class="skill-pill">
                                 <span class="pill-dot"></span>
@@ -522,11 +557,15 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="category-badge">Infra & Monitoring</span>
-                                <h3 class="skill-category-title">DevOps & Outils</h3>
+                                <span class="category-badge" data-fr="Infra &amp; Monitoring"
+                                    data-en="Infra &amp; Monitoring">Infra & Monitoring</span>
+                                <h3 class="skill-category-title" data-fr="DevOps &amp; Outils"
+                                    data-en="DevOps &amp; Tools">DevOps & Outils</h3>
                             </div>
                         </div>
-                        <p class="skill-category-desc">
+                        <p class="skill-category-desc"
+                            data-fr="Conteneurisation reproductible, orchestration de services et observabilité continue des flux de production."
+                            data-en="Reproducible containerization, service orchestration, and continuous observability of production flows.">
                             Conteneurisation reproductible, orchestration de services et observabilité continue des flux
                             de production.
                         </p>
@@ -561,9 +600,14 @@
         <section id="projets" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">03 &bull; RÉALISATIONS</span>
-                    <h2 class="section-title">Projets <span class="gradient-text">Phares</span></h2>
-                    <p class="section-subtitle">Cas concrets alliant robustesse d'ingénierie data et innovation en
+                    <span class="section-tag" data-fr="03 &bull; RÉALISATIONS" data-en="03 &bull; FEATURED PROJECTS">03
+                        &bull; RÉALISATIONS</span>
+                    <h2 class="section-title"><span data-fr="Projets" data-en="Featured">Projets</span> <span
+                            class="gradient-text" data-fr="Phares" data-en="Projects">Phares</span></h2>
+                    <p class="section-subtitle"
+                        data-fr="Cas concrets alliant robustesse d'ingénierie data et innovation en intelligence artificielle."
+                        data-en="Concrete use cases combining data engineering robustness and AI innovation.">Cas
+                        concrets alliant robustesse d'ingénierie data et innovation en
                         intelligence artificielle.</p>
                 </div>
 
@@ -572,7 +616,8 @@
                     <article class="project-card glass-panel">
                         <div class="project-banner">
                             <div class="project-meta-top">
-                                <span class="project-type-tag highlight-badge-blue">Stage Entreprise</span>
+                                <span class="project-type-tag highlight-badge-blue" data-fr="Stage Entreprise"
+                                    data-en="Company Internship">Stage Entreprise</span>
                                 <span class="project-date">2026</span>
                             </div>
                             <div class="project-tech-flow">
@@ -583,9 +628,14 @@
 
                         <div class="project-body">
                             <h3 class="project-title">Data Warehouse & BI &bull; Acacia Afrique Système</h3>
-                            <h4 class="project-subtitle">Centralisation ERP Sage X3 avec Apache Hop et Power BI</h4>
+                            <h4 class="project-subtitle"
+                                data-fr="Centralisation ERP Sage X3 avec Apache Hop et Power BI"
+                                data-en="Sage X3 ERP Centralization with Apache Hop &amp; Power BI">Centralisation ERP
+                                Sage X3 avec Apache Hop et Power BI</h4>
 
-                            <p class="project-description">
+                            <p class="project-description"
+                                data-fr="Conception et déploiement d'une solution décisionnelle de bout en bout pour centraliser les données issues de l'ERP Sage X3. Automatisation complète des flux d'extraction et de transformation, et modélisation d'un schéma dimensionnel optimisé pour le reporting stratégique."
+                                data-en="End-to-end BI solution design and deployment to centralize data from Sage X3 ERP. Full automation of extraction and transformation workflows, and dimensional schema modeling optimized for strategic reporting.">
                                 Conception et déploiement d'une solution décisionnelle de bout en bout pour centraliser
                                 les données issues de l'ERP Sage X3. Automatisation complète des flux d'extraction et de
                                 transformation, et modélisation d'un schéma dimensionnel optimisé pour le reporting
@@ -598,7 +648,10 @@
                                         stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    <span>Pipelines ETL résilients avec <strong>Apache Hop</strong> sans
+                                    <span
+                                        data-fr="Pipelines ETL résilients avec &lt;strong&gt;Apache Hop&lt;/strong&gt; sans interruption."
+                                        data-en="Resilient ETL pipelines with &lt;strong&gt;Apache Hop&lt;/strong&gt; without downtime.">Pipelines
+                                        ETL résilients avec <strong>Apache Hop</strong> sans
                                         interruption.</span>
                                 </div>
                                 <div class="key-point">
@@ -606,7 +659,10 @@
                                         stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    <span>Dashboards exécutifs <strong>Power BI</strong> avec mesures DAX
+                                    <span
+                                        data-fr="Dashboards exécutifs &lt;strong&gt;Power BI&lt;/strong&gt; avec mesures DAX avancées."
+                                        data-en="Executive &lt;strong&gt;Power BI&lt;/strong&gt; dashboards with advanced DAX measures.">Dashboards
+                                        exécutifs <strong>Power BI</strong> avec mesures DAX
                                         avancées.</span>
                                 </div>
                             </div>
@@ -625,8 +681,10 @@
                     <article class="project-card glass-panel">
                         <div class="project-banner">
                             <div class="project-meta-top">
-                                <span class="project-type-tag highlight-badge-purple">IA & Multi-Agents</span>
-                                <span class="project-date">Projet Avancé</span>
+                                <span class="project-type-tag highlight-badge-purple" data-fr="IA &amp; Multi-Agents"
+                                    data-en="AI &amp; Multi-Agents">IA & Multi-Agents</span>
+                                <span class="project-date" data-fr="Projet Avancé" data-en="Advanced Project">Projet
+                                    Avancé</span>
                             </div>
                             <div class="project-tech-flow">
                                 <span>CrewAI Agents</span> &rarr; <span>RAG Ollama (Local)</span> &rarr;
@@ -635,11 +693,17 @@
                         </div>
 
                         <div class="project-body">
-                            <h3 class="project-title">MVP Système Multi-Agents</h3>
-                            <h4 class="project-subtitle">Automatisation métier avec CrewAI, FastAPI, PostgreSQL et RAG
+                            <h3 class="project-title" data-fr="MVP Système Multi-Agents"
+                                data-en="Multi-Agent System MVP">MVP Système Multi-Agents</h3>
+                            <h4 class="project-subtitle"
+                                data-fr="Automatisation métier avec CrewAI, FastAPI, PostgreSQL et RAG Ollama"
+                                data-en="Business automation with CrewAI, FastAPI, PostgreSQL, and Ollama RAG">
+                                Automatisation métier avec CrewAI, FastAPI, PostgreSQL et RAG
                                 Ollama</h4>
 
-                            <p class="project-description">
+                            <p class="project-description"
+                                data-fr="Système autonome multi-agents capable de décomposer, analyser et exécuter des tâches métier complexes. Exploitation d'un pipeline RAG basé sur des LLMs locaux via Ollama garantissant la confidentialité absolue des documents d'entreprise."
+                                data-en="Autonomous multi-agent system capable of breaking down, analyzing, and executing complex business tasks. Leveraging a RAG pipeline based on local LLMs via Ollama to ensure complete confidentiality of enterprise documents.">
                                 Système autonome multi-agents capable de décomposer, analyser et exécuter des tâches
                                 métier complexes. Exploitation d'un pipeline RAG basé sur des LLMs locaux via Ollama
                                 garantissant la confidentialité absolue des documents d'entreprise.
@@ -651,7 +715,10 @@
                                         stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    <span>Orchestration collaborative d'agents spécialisés
+                                    <span
+                                        data-fr="Orchestration collaborative d'agents spécialisés (&lt;strong&gt;CrewAI&lt;/strong&gt;)."
+                                        data-en="Collaborative orchestration of specialized agents (&lt;strong&gt;CrewAI&lt;/strong&gt;).">Orchestration
+                                        collaborative d'agents spécialisés
                                         (<strong>CrewAI</strong>).</span>
                                 </div>
                                 <div class="key-point">
@@ -659,7 +726,10 @@
                                         stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    <span>Serving asynchrone haute performance via <strong>FastAPI</strong> et
+                                    <span
+                                        data-fr="Serving asynchrone haute performance via &lt;strong&gt;FastAPI&lt;/strong&gt; et &lt;strong&gt;PostgreSQL&lt;/strong&gt;."
+                                        data-en="High-performance asynchronous serving via &lt;strong&gt;FastAPI&lt;/strong&gt; and &lt;strong&gt;PostgreSQL&lt;/strong&gt;.">Serving
+                                        asynchrone haute performance via <strong>FastAPI</strong> et
                                         <strong>PostgreSQL</strong>.</span>
                                 </div>
                             </div>
@@ -688,10 +758,15 @@
                         </div>
 
                         <div class="project-body">
-                            <h3 class="project-title">Pipeline Data Analytics</h3>
-                            <h4 class="project-subtitle">ETL d'offres d'emploi tech avec PySpark et MinIO</h4>
+                            <h3 class="project-title" data-fr="Pipeline Data Analytics"
+                                data-en="Data Analytics Pipeline">Pipeline Data Analytics</h3>
+                            <h4 class="project-subtitle" data-fr="ETL d'offres d'emploi tech avec PySpark et MinIO"
+                                data-en="Tech Job Offers ETL with PySpark and MinIO">ETL d'offres d'emploi tech avec
+                                PySpark et MinIO</h4>
 
-                            <p class="project-description">
+                            <p class="project-description"
+                                data-fr="Conception d'un pipeline d'ingestion et de transformation distribuée de volumétries importantes d'annonces de recrutement tech. Nettoyage, structuration des compétences requises et stockage columnar en format Parquet dans un bucket MinIO compatible S3."
+                                data-en="Design of a distributed ingestion and transformation pipeline for high volumes of tech job postings. Cleaning, structuring required skills, and columnar storage in Parquet format in an S3-compatible MinIO bucket.">
                                 Conception d'un pipeline d'ingestion et de transformation distribuée de volumétries
                                 importantes d'annonces de recrutement tech. Nettoyage, structuration des compétences
                                 requises et stockage columnar en format Parquet dans un bucket MinIO compatible S3.
@@ -703,7 +778,10 @@
                                         stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    <span>Calcul distribué et transformations vectorielles avec
+                                    <span
+                                        data-fr="Calcul distribué et transformations vectorielles avec &lt;strong&gt;PySpark&lt;/strong&gt;."
+                                        data-en="Distributed computation and vectorized transformations with &lt;strong&gt;PySpark&lt;/strong&gt;.">Calcul
+                                        distribué et transformations vectorielles avec
                                         <strong>PySpark</strong>.</span>
                                 </div>
                                 <div class="key-point">
@@ -711,7 +789,10 @@
                                         stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    <span>Stockage objet <strong>MinIO S3</strong> optimisé pour requêtes analytiques
+                                    <span
+                                        data-fr="Stockage objet &lt;strong&gt;MinIO S3&lt;/strong&gt; optimisé pour requêtes analytiques rapides."
+                                        data-en="&lt;strong&gt;MinIO S3&lt;/strong&gt; object storage optimized for fast analytical queries.">Stockage
+                                        objet <strong>MinIO S3</strong> optimisé pour requêtes analytiques
                                         rapides.</span>
                                 </div>
                             </div>
@@ -730,7 +811,8 @@
                     <article class="project-card glass-panel">
                         <div class="project-banner">
                             <div class="project-meta-top">
-                                <span class="project-type-tag highlight-badge-emerald">Temps Réel & Docker</span>
+                                <span class="project-type-tag highlight-badge-emerald" data-fr="Temps Réel &amp; Docker"
+                                    data-en="Real-Time &amp; Docker">Temps Réel & Docker</span>
                                 <span class="project-date">Architecture</span>
                             </div>
                             <div class="project-tech-flow">
@@ -740,10 +822,15 @@
                         </div>
 
                         <div class="project-body">
-                            <h3 class="project-title">Architecture Medallion & Streaming</h3>
-                            <h4 class="project-subtitle">Pipeline temps réel avec Apache Kafka et Docker</h4>
+                            <h3 class="project-title" data-fr="Architecture Medallion &amp; Streaming"
+                                data-en="Medallion Architecture &amp; Streaming">Architecture Medallion & Streaming</h3>
+                            <h4 class="project-subtitle" data-fr="Pipeline temps réel avec Apache Kafka et Docker"
+                                data-en="Real-Time Pipeline with Apache Kafka and Docker">Pipeline temps réel avec
+                                Apache Kafka et Docker</h4>
 
-                            <p class="project-description">
+                            <p class="project-description"
+                                data-fr="Implémentation d'un pipeline de streaming événementiel appliquant les principes de l'architecture Medallion. Ingestion brute continue (Bronze), assainissement et validation des données (Silver), et agrégation finale orientée analytique temps réel (Gold)."
+                                data-en="Implementation of an event-driven streaming pipeline applying Medallion architecture principles. Continuous raw ingestion (Bronze), data sanitization and validation (Silver), and final real-time analytics aggregation (Gold).">
                                 Implémentation d'un pipeline de streaming événementiel appliquant les principes de
                                 l'architecture Medallion. Ingestion brute continue (Bronze), assainissement et
                                 validation des données (Silver), et agrégation finale orientée analytique temps réel
@@ -756,7 +843,10 @@
                                         stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    <span>Clustering <strong>Apache Kafka</strong> et gestion des topics
+                                    <span
+                                        data-fr="Clustering &lt;strong&gt;Apache Kafka&lt;/strong&gt; et gestion des topics événementiels."
+                                        data-en="&lt;strong&gt;Apache Kafka&lt;/strong&gt; clustering and event topic management.">Clustering
+                                        <strong>Apache Kafka</strong> et gestion des topics
                                         événementiels.</span>
                                 </div>
                                 <div class="key-point">
@@ -764,7 +854,10 @@
                                         stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg>
-                                    <span>Environnement entièrement reproductible et orchestré sous <strong>Docker
+                                    <span
+                                        data-fr="Environnement entièrement reproductible et orchestré sous &lt;strong&gt;Docker Compose&lt;/strong&gt;."
+                                        data-en="Fully reproducible environment orchestrated under &lt;strong&gt;Docker Compose&lt;/strong&gt;.">Environnement
+                                        entièrement reproductible et orchestré sous <strong>Docker
                                             Compose</strong>.</span>
                                 </div>
                             </div>
@@ -786,9 +879,14 @@
         <section id="parcours" class="section section-darker">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">04 &bull; EXPÉRIENCE & FORMATION</span>
-                    <h2 class="section-title">Mon <span class="gradient-text">Parcours</span></h2>
-                    <p class="section-subtitle">L'évolution de mes compétences académiques et professionnelles vers
+                    <span class="section-tag" data-fr="04 &bull; EXPÉRIENCE &amp; FORMATION"
+                        data-en="04 &bull; EXPERIENCE &amp; EDUCATION">04 &bull; EXPÉRIENCE & FORMATION</span>
+                    <h2 class="section-title"><span data-fr="Mon" data-en="My">Mon</span> <span class="gradient-text"
+                            data-fr="Parcours" data-en="Journey">Parcours</span></h2>
+                    <p class="section-subtitle"
+                        data-fr="L'évolution de mes compétences académiques et professionnelles vers l'excellence Data &amp; IA."
+                        data-en="The evolution of my academic and professional skills towards Data &amp; AI excellence.">
+                        L'évolution de mes compétences académiques et professionnelles vers
                         l'excellence Data & IA.</p>
                 </div>
 
@@ -802,12 +900,17 @@
                         </div>
                         <div class="timeline-content glass-panel">
                             <div class="timeline-meta">
-                                <span class="timeline-date">2026 &bull; 2 mois</span>
-                                <span class="timeline-type">Stage Entreprise</span>
+                                <span class="timeline-date" data-fr="2026 &bull; 2 mois"
+                                    data-en="2026 &bull; 2 months">2026 &bull; 2 mois</span>
+                                <span class="timeline-type" data-fr="Stage Entreprise"
+                                    data-en="Company Internship">Stage Entreprise</span>
                             </div>
-                            <h3 class="timeline-role">Stage Data & IA</h3>
+                            <h3 class="timeline-role" data-fr="Stage Data &amp; IA" data-en="Data &amp; AI Internship">
+                                Stage Data & IA</h3>
                             <h4 class="timeline-company">Acacia Afrique Système</h4>
-                            <p class="timeline-text">
+                            <p class="timeline-text"
+                                data-fr="Centralisation des flux d'un ERP industriel (Sage X3) avec Apache Hop, conception d'un data warehouse décisionnel sur SQL Server et déploiement de dashboards de pilotage sous Power BI."
+                                data-en="Centralization of industrial ERP workflows (Sage X3) with Apache Hop, design of a decision-support data warehouse on SQL Server, and deployment of management dashboards in Power BI.">
                                 Centralisation des flux d'un ERP industriel (Sage X3) avec Apache Hop, conception d'un
                                 data warehouse décisionnel sur SQL Server et déploiement de dashboards de pilotage sous
                                 Power BI.
@@ -828,18 +931,26 @@
                         </div>
                         <div class="timeline-content glass-panel highlight-border">
                             <div class="timeline-meta">
-                                <span class="timeline-date highlight-cyan">Aujourd'hui &bull; En cours</span>
-                                <span class="timeline-type">Cycle Ingénieur d'État</span>
+                                <span class="timeline-date highlight-cyan" data-fr="Aujourd'hui &bull; En cours"
+                                    data-en="Present &bull; Ongoing">Aujourd'hui &bull; En cours</span>
+                                <span class="timeline-type" data-fr="Cycle Ingénieur d'État"
+                                    data-en="State Engineering Degree">Cycle Ingénieur d'État</span>
                             </div>
-                            <h3 class="timeline-role">5ᵉ année cycle ingénieur Data Engineering & IA</h3>
-                            <h4 class="timeline-company">École Nationale des Sciences Appliquées (ENSA) de Fès</h4>
-                            <p class="timeline-text">
+                            <h3 class="timeline-role" data-fr="5ᵉ année cycle ingénieur Data Engineering &amp; IA"
+                                data-en="5th Year Engineering Degree in Data Engineering &amp; AI">5ᵉ année cycle
+                                ingénieur Data Engineering & IA</h3>
+                            <h4 class="timeline-company" data-fr="École Nationale des Sciences Appliquées (ENSA) de Fès"
+                                data-en="National School of Applied Sciences (ENSA) Fez">École Nationale des Sciences
+                                Appliquées (ENSA) de Fès</h4>
+                            <p class="timeline-text"
+                                data-fr="Élève ingénieure en 5ᵉ année au sein de la filière Data Engineering &amp; Intelligence Artificielle. Formation d'élite couvrant le Big Data distribué, l'IA générative, l'architecture cloud et le MLOps."
+                                data-en="5th-year engineering student within the Data Engineering &amp; Artificial Intelligence track. Elite program covering distributed Big Data, generative AI, cloud architecture, and MLOps.">
                                 Élève ingénieure en 5ᵉ année au sein de la filière Data Engineering &
                                 Intelligence Artificielle. Formation d'élite couvrant le Big Data distribué, l'IA
                                 générative, l'architecture cloud et le MLOps.
                             </p>
                             <div class="timeline-badges">
-                                <span class="badge-sm">5ᵉ Année</span>
+                                <span class="badge-sm" data-fr="5ᵉ Année" data-en="5th Year">5ᵉ Année</span>
                                 <span class="badge-sm">Data Engineering</span>
                                 <span class="badge-sm">IA & LLM</span>
                                 <span class="badge-sm">ENSA Fès</span>
@@ -854,17 +965,26 @@
                         </div>
                         <div class="timeline-content glass-panel pfe-timeline-card">
                             <div class="timeline-meta">
-                                <span class="timeline-date highlight-green">À partir de début 2027</span>
-                                <span class="timeline-type target">Objectif Actuel</span>
+                                <span class="timeline-date highlight-green" data-fr="À partir de début 2027"
+                                    data-en="Starting early 2027">À partir de début 2027</span>
+                                <span class="timeline-type target" data-fr="Objectif Actuel"
+                                    data-en="Current Target">Objectif Actuel</span>
                             </div>
-                            <h3 class="timeline-role">Stage PFE de Fin d'Études</h3>
-                            <h4 class="timeline-company">Opportunité Data Engineering / Intelligence Artificielle</h4>
-                            <p class="timeline-text">
+                            <h3 class="timeline-role" data-fr="Stage PFE de Fin d'Études"
+                                data-en="End-of-Studies PFE Internship">Stage PFE de Fin d'Études</h3>
+                            <h4 class="timeline-company"
+                                data-fr="Opportunité Data Engineering / Intelligence Artificielle"
+                                data-en="Data Engineering / Artificial Intelligence Opportunity">Opportunité Data
+                                Engineering / Intelligence Artificielle</h4>
+                            <p class="timeline-text"
+                                data-fr="En quête d'un projet d'envergure en entreprise : conception de plateformes de données, pipelines de streaming, systèmes multi-agents ou intégration de solutions IA de pointe."
+                                data-en="Seeking an ambitious corporate project: data platform design, streaming pipelines, multi-agent systems, or cutting-edge AI integration.">
                                 En quête d'un projet d'envergure en entreprise : conception de plateformes de données,
                                 pipelines de streaming, systèmes multi-agents ou intégration de solutions IA de pointe.
                             </p>
                             <div class="timeline-cta">
-                                <a href="#contact" class="btn btn-sm btn-primary">Proposer une opportunité</a>
+                                <a href="#contact" class="btn btn-sm btn-primary" data-fr="Proposer une opportunité"
+                                    data-en="Propose an opportunity">Proposer une opportunité</a>
                             </div>
                         </div>
                     </div>
@@ -876,9 +996,15 @@
         <section id="contact" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">05 &bull; CONTACT</span>
-                    <h2 class="section-title">Construisons l'avenir <span class="gradient-text">ensemble</span></h2>
-                    <p class="section-subtitle">Je suis à l'écoute des opportunités de stage PFE (à partir de début 2027)
+                    <span class="section-tag" data-fr="05 &bull; CONTACT" data-en="05 &bull; CONTACT">05 &bull;
+                        CONTACT</span>
+                    <h2 class="section-title"><span data-fr="Construisons l'avenir"
+                            data-en="Let's build the future">Construisons l'avenir</span> <span class="gradient-text"
+                            data-fr="ensemble" data-en="together">ensemble</span></h2>
+                    <p class="section-subtitle"
+                        data-fr="Je suis à l'écoute des opportunités de stage PFE (à partir de début 2027) et de collaborations techniques."
+                        data-en="Open to graduation internship (PFE) opportunities (from early 2027) and technical collaborations.">
+                        Je suis à l'écoute des opportunités de stage PFE (à partir de début 2027)
                         et de collaborations techniques.</p>
                 </div>
 
@@ -886,11 +1012,15 @@
                     <!-- Coordonnées & Liens -->
                     <div class="contact-info-card glass-panel">
                         <h3 class="contact-card-title">Salma El Bardi</h3>
-                        <p class="contact-card-subtitle">Élève Ingénieure en Data Engineering & IA</p>
+                        <p class="contact-card-subtitle" data-fr="Élève Ingénieure en Data Engineering &amp; IA"
+                            data-en="Engineering Student in Data Engineering &amp; AI">Élève Ingénieure en Data
+                            Engineering & IA</p>
 
                         <div class="contact-badge-status">
                             <span class="pulsing-dot"></span>
-                            <span>Disponible pour Stage PFE &bull; Début 2027</span>
+                            <span data-fr="Disponible pour Stage PFE &bull; Début 2027"
+                                data-en="Available for PFE Internship &bull; Early 2027">Disponible pour Stage PFE
+                                &bull; Début 2027</span>
                         </div>
 
                         <div class="contact-details-list">
@@ -904,7 +1034,8 @@
                                     </svg>
                                 </div>
                                 <div class="item-info">
-                                    <span class="item-label">Email professionnel</span>
+                                    <span class="item-label" data-fr="Email professionnel"
+                                        data-en="Professional Email">Email professionnel</span>
                                     <a href="mailto:salma15bardi@gmail.com"
                                         class="item-value">salma15bardi@gmail.com</a>
                                 </div>
@@ -915,7 +1046,7 @@
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                                     </svg>
-                                    <span class="copy-feedback">Copié !</span>
+                                    <span class="copy-feedback" data-fr="Copié !" data-en="Copied!">Copié !</span>
                                 </button>
                             </div>
 
@@ -960,8 +1091,12 @@
                                     </svg>
                                 </div>
                                 <div class="item-info">
-                                    <span class="item-label">Localisation</span>
-                                    <span class="item-value">Fès, Maroc &bull; Mobilité nationale et internationale</span>
+                                    <span class="item-label" data-fr="Localisation"
+                                        data-en="Location">Localisation</span>
+                                    <span class="item-value"
+                                        data-fr="Fès, Maroc &bull; Mobilité nationale et internationale"
+                                        data-en="Fez, Morocco &bull; National and international mobility">Fès, Maroc
+                                        &bull; Mobilité nationale et internationale</span>
                                 </div>
                             </div>
                         </div>
@@ -969,35 +1104,49 @@
 
                     <!-- Formulaire de contact rapide -->
                     <div class="contact-form-card glass-panel">
-                        <h3 class="form-title">Envoyez-moi un message direct</h3>
-                        <p class="form-desc">Vous recherchez une stagiaire PFE motivée ou souhaitez échanger sur un
+                        <h3 class="form-title" data-fr="Envoyez-moi un message direct"
+                            data-en="Send me a direct message">Envoyez-moi un message direct</h3>
+                        <p class="form-desc"
+                            data-fr="Vous recherchez une stagiaire PFE motivée ou souhaitez échanger sur un projet ?"
+                            data-en="Looking for a motivated graduation intern or want to discuss a project?">Vous
+                            recherchez une stagiaire PFE motivée ou souhaitez échanger sur un
                             projet ?</p>
 
                         <form id="contact-form" class="styled-form">
                             <div class="form-group">
-                                <label for="form-name">Votre nom / Entreprise</label>
-                                <input type="text" id="form-name" required placeholder="Ex: Recruteur / Tech Lead">
+                                <label for="form-name" data-fr="Votre nom / Entreprise"
+                                    data-en="Your Name / Company">Votre nom / Entreprise</label>
+                                <input type="text" id="form-name" required placeholder="Ex: Recruteur / Tech Lead"
+                                    data-fr-placeholder="Ex: Recruteur / Tech Lead"
+                                    data-en-placeholder="Ex: Recruiter / Tech Lead">
                             </div>
 
                             <div class="form-group">
-                                <label for="form-email">Votre adresse email</label>
-                                <input type="email" id="form-email" required placeholder="nom@entreprise.com">
+                                <label for="form-email" data-fr="Votre adresse email" data-en="Your email address">Votre
+                                    adresse email</label>
+                                <input type="email" id="form-email" required placeholder="nom@entreprise.com"
+                                    data-fr-placeholder="nom@entreprise.com" data-en-placeholder="name@company.com">
                             </div>
 
                             <div class="form-group">
-                                <label for="form-subject">Sujet de l'opportunité</label>
+                                <label for="form-subject" data-fr="Sujet de l'opportunité"
+                                    data-en="Subject of the opportunity">Sujet de l'opportunité</label>
                                 <input type="text" id="form-subject" required
-                                    placeholder="Offre Stage PFE 2027 / Échange technique">
+                                    placeholder="Offre Stage PFE 2027 / Échange technique"
+                                    data-fr-placeholder="Offre Stage PFE 2027 / Échange technique"
+                                    data-en-placeholder="PFE Internship Offer 2027 / Tech Discussion">
                             </div>
 
                             <div class="form-group">
-                                <label for="form-message">Message</label>
+                                <label for="form-message" data-fr="Message" data-en="Message">Message</label>
                                 <textarea id="form-message" rows="4" required
-                                    placeholder="Bonjour Salma, nous recherchons un profil Data & IA pour notre équipe..."></textarea>
+                                    placeholder="Bonjour Salma, nous recherchons un profil Data & IA pour notre équipe..."
+                                    data-fr-placeholder="Bonjour Salma, nous recherchons un profil Data & IA pour notre équipe..."
+                                    data-en-placeholder="Hello Salma, we are looking for a Data & AI profile for our team..."></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-block">
-                                <span>Envoyer le message</span>
+                                <span data-fr="Envoyer le message" data-en="Send message">Envoyer le message</span>
                                 <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
                                     <line x1="22" y1="2" x2="11" y2="13" />
@@ -1017,21 +1166,26 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <span class="footer-logo">Salma El Bardi</span>
-                <p class="footer-text">Élève ingénieure en Data Engineering &amp; Intelligence Artificielle &bull; ENSA
+                <p class="footer-text"
+                    data-fr="Élève ingénieure en Data Engineering &amp; Intelligence Artificielle &bull; ENSA Fès"
+                    data-en="Engineering student in Data Engineering &amp; Artificial Intelligence &bull; ENSA Fez">
+                    Élève ingénieure en Data Engineering &amp; Intelligence Artificielle &bull; ENSA
                     Fès </p>
             </div>
 
             <div class="footer-nav">
-                <a href="#accueil">Accueil</a>
-                <a href="#a-propos">À propos</a>
-                <a href="#competences">Compétences</a>
-                <a href="#projets">Projets</a>
-                <a href="#parcours">Parcours</a>
-                <a href="#contact">Contact</a>
+                <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
+                <a href="#a-propos" data-fr="À propos" data-en="About">À propos</a>
+                <a href="#competences" data-fr="Compétences" data-en="Skills">Compétences</a>
+                <a href="#projets" data-fr="Projets" data-en="Projects">Projets</a>
+                <a href="#parcours" data-fr="Parcours" data-en="Journey">Parcours</a>
+                <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Salma El Bardi. Tous droits réservés.</p>
+                <p data-fr="&copy; 2026 Salma El Bardi. Tous droits réservés."
+                    data-en="&copy; 2026 Salma El Bardi. All rights reserved.">&copy; 2026 Salma El Bardi. Tous droits
+                    réservés.</p>
                 <div class="footer-links">
                     <a href="https://github.com/SALMA-elbardi" target="_blank" rel="noopener noreferrer">GitHub:
                         @SALMA-elbardi</a>
@@ -1047,7 +1201,7 @@
         </svg>
     </button>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=10"></script>
 </body>
 
 </html>
